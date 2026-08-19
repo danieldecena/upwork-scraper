@@ -1,0 +1,56 @@
+# Named Upwork search scenarios. `query` uses Upwork's own boolean syntax:
+# AND (implicit), (a OR b), AND NOT c, "exact phrase", title:word.
+# Run with: python scrape.py --scenario <name>
+
+quick-easy:
+  query: "(simple OR basic)"
+  contractor_tier: "1,2,3"
+  duration_v3: "week,month"
+  per_page: 50
+  location: "United States"
+  sort: recency
+  experience_level: null
+  min_budget: 100
+
+marketing-automation:
+  query: '(marketing OR automation OR "email marketing" OR CRM)'
+  contractor_tier: "1,2,3"
+  duration_v3: "week,month"
+  per_page: 50
+  location: "United States"
+  sort: recency
+  experience_level: null
+  min_budget: null
+
+high-paying:
+  query: "(simple OR basic)"
+  contractor_tier: "1,2,3"
+  duration_v3: "week,month"
+  per_page: 50
+  location: "United States"
+  sort: recency
+  experience_level: null
+  min_budget: 750
+
+stackable:
+  # 1-3 month fixed-term contracts, <30 hrs/week when hourly -- short and
+  # light enough to run several concurrently rather than one exclusive gig.
+  query: "(simple OR basic OR remote)"
+  contractor_tier: "1,2,3"
+  duration_v3: "month"
+  workload: "as_needed"
+  per_page: 50
+  location: "United States"
+  sort: recency
+  experience_level: null
+  min_budget: null
+
+data-entry:
+  query: '("data entry" OR "data entry clerk" OR "copy paste" OR transcription)'
+  contractor_tier: "1,2,3"
+  duration_v3: "week,month"
+  per_page: 50
+  location: "United States"
+  sort: recency
+  experience_level: entry
+  min_budget: null
